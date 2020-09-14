@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+ <form  action="{{ url_for('index') }}" method="POST">
+    {{ form.hidden_tag() }}
+	<p>{{ form.comment.label }}</p>
+	{{ form.comment() }}
+	<p>{{ form.submit() }}</p>
+ </form>
+
+ {% if question == None %}
+ {% else %} 
+ <h3>Your question:</h3> 
+ <p> 
+ {{ question }}
+ </p>
+ <h2>Your Answer:</h2>
+    {% for moment, card in spread_reading.items() %}
+    <ul>
+    <li>Your {{ moment }} is the {{ card }} card</li>
+    </ul>
+  {% endfor %}
+ {% endif %}
+
+
+{% endblock %}
