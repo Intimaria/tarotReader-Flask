@@ -13,3 +13,8 @@ class Spread():
     self.spread["future"] = tarot.get(random.randint(1, 22), None)
     return self.spread
 
+#uncomment for test on console
+#my_reading = Spread().get_spread()
+#for key, item in my_reading.items():
+#  print("Your "+key+" is the "+item+" card.")
+	
